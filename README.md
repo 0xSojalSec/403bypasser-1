@@ -27,7 +27,7 @@ the tool take two arguments : url - path
 
 <dl>
     <dt>For example:</dt>
-    <dd>`python3 403bypasser.py https://www.example.com /admin` ( space between url and path )</dd>
+    <dd><code>python3 403bypasser.py https://www.example.com /admin</code> ( space between url and path )</dd>
 </dl>
 
 # Todo :

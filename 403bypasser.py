@@ -7,12 +7,12 @@ import urllib3
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
 print("""
- _  _    ___ _____ _                                         
-| || |  / _ \___ /| |__  _   _ _ __   __ _ ___ ___  ___ _ __ 
-| || |_| | | ||_ \| '_ \| | | | '_ \ / _` / __/ __|/ _ \ '__|
-|__   _| |_| |__) | |_) | |_| | |_) | (_| \__ \__ \  __/ |   
-   |_|  \___/____/|_.__/ \__, | .__/ \__,_|___/___/\___|_|   
-                         |___/|_|\n""")
+  _  _    ___ _____ _                                         
+ | || |  / _ \___ /| |__  _   _ _ __   __ _ ___ ___  ___ _ __ 
+ | || |_| | | ||_ \| '_ \| | | | '_ \ / _` / __/ __|/ _ \ '__|
+ |__   _| |_| |__) | |_) | |_| | |_) | (_| \__ \__ \  __/ |   
+    |_|  \___/____/|_.__/ \__, | .__/ \__,_|___/___/\___|_|   
+                          |___/|_|\n\n""")
 
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 domain = sys.argv[1]
@@ -69,4 +69,4 @@ url4 = domain + path
 res15 = requests.get(url3, headers={'X-Rewrite-URL':url4} , allow_redirects=False, verify=False)		
 print(Style.BRIGHT + Fore.GREEN + "X-Rewrite-URL" + " : "+ Fore.YELLOW + str(res15.status_code))
 
-print(Style.BRIGHT + Fore.BLUE + "finished automating.")
+print(Style.BRIGHT + Fore.BLUE + "\nfinished automating.\n")

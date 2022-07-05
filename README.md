@@ -12,18 +12,17 @@ The tool use three technique to try to bypass 403 response code and give out the
 3- add headers to the request (X-Forwarded-Host , X-Host ... etc )
 
 # Installation :
-
-1- git clone https://github.com/smackerdodi/403bypasser.git
-
-2- cd 403bypasser
-
-3- pip3 install -r requirements.txt
+```
+git clone https://github.com/smackerdodi/403bypasser.git
+cd 403bypasser
+pip3 install -r requirements.txt
+```
 
 # Usage 
 
 the tool take two arguments : url - path 
 
-python3 403bypasser.py url path
+`python3 403bypasser.py url path`
 
 EX : python3 403bypasser.py https://www.example.com /admin ( space between url and path )
 

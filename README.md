@@ -14,6 +14,7 @@ The tool use three technique to try to bypass 403 response code and give out the
 
 ## Installation :
 ```
+sudo apt update && sudo apt install python3-pip
 git clone https://github.com/smackerdodi/403bypasser.git
 cd 403bypasser
 pip3 install -r requirements.txt

